@@ -1,12 +1,34 @@
-body {
-    font-family: "Bebas Neue", sans-serif;
-    background: url('img/cindy-fu-fgwlWRwRf5g-unsplash.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: white;
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: "Bebas Neue", sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('img/PHOTO-2025-01-06-18-23-36.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Logo Styles */
 .logo {
     display: flex;
     justify-content: center;
@@ -19,6 +41,7 @@ body {
     animation: pulse 2s infinite;
 }
 
+/* Pulse animation */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
@@ -28,6 +51,7 @@ body {
     }
 }
 
+/* Main Title */
 .main-title {
     text-align: center;
     display: flex;
@@ -39,8 +63,7 @@ body {
 .main-title p {
     margin: 0;
     font-size: 40px;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-                 0 0 20px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .main-title p:first-child {
@@ -55,10 +78,10 @@ body {
 .main-title p:last-child {
     color: #ffd700;
     font-size: 50px;
-    text-shadow: 0 0 15px #ffd700,
-                 0 0 30px #ffd700;
+    text-shadow: 0 0 15px #ffd700, 0 0 30px #ffd700;
 }
 
+/* WhatsApp Button Section */
 .whatsapp {
     margin: 3rem 0 1rem 0;
     display: flex;
@@ -77,16 +100,14 @@ body {
     border: none;
     color: white;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 25px rgba(199, 9, 9, 0.8),
-                0 0 10px rgba(199, 9, 9, 0.8) inset;
+    box-shadow: 0 0 25px rgba(199, 9, 9, 0.8), 0 0 10px rgba(199, 9, 9, 0.8) inset;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .button:hover {
     transform: translateY(-4px);
-    box-shadow: 0 0 35px rgba(199, 9, 9, 1),
-                0 0 15px rgba(199, 9, 9, 1) inset;
+    box-shadow: 0 0 35px rgba(199, 9, 9, 1), 0 0 15px rgba(199, 9, 9, 1) inset;
 }
 
 .button img {
@@ -94,6 +115,7 @@ body {
     filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(290deg) brightness(150%) contrast(150%);
 }
 
+/* Info Section */
 .info {
     display: flex;
     flex-direction: column;
@@ -110,12 +132,49 @@ body {
 .info p {
     font-size: 22px;
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .info h3 {
     font-size: 35px;
     text-align: center;
     margin-bottom: 1rem;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-                 0 0 15px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .logo img {
+        width: 15rem;
+    }
+
+    .main-title p {
+        font-size: 30px;
+    }
+
+    .main-title p:nth-child(2) {
+        font-size: 28px;
+    }
+
+    .main-title p:last-child {
+        font-size: 40px;
+    }
+
+    .button {
+        font-size: 24px;
+        padding: 0.7em 1.2em;
+    }
+
+    .info {
+        margin: 1rem;
+        padding: 0.8rem;
+    }
+
+    .info p, .info h3 {
+        font-size: 20px;
+    }
 }
