@@ -120,30 +120,64 @@ padding: 0;
 }
 
 .button {
-    padding: 0.8em 1.5em;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-family: "Jugabet", sans-serif;
-    font-size: 30px;
-    background: linear-gradient(113.27deg, #5428b4 15.04%, #b339e2 84.96%);
-    border-radius: 10px;
-    border: none;
-    color: white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-    box-shadow: 0 0 25px rgba(199, 9, 9, 0.8),
-    0 0 10px rgba(199, 9, 9, 0.8) inset;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    animation: pulse 1.2s infinite; /* Aplica la animación */
+  position: relative;
+  overflow: hidden;
+  padding: 0.8em 1.5em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Jugabet", sans-serif;
+  font-size: 30px;
+  background: linear-gradient(113.27deg, #5428b4 15.04%, #b339e2 84.96%);
+  border-radius: 10px;
+  border: none;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 25px rgba(199, 9, 9, 0.8),
+              0 0 10px rgba(199, 9, 9, 0.8) inset;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: pulse 1.2s infinite;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  transform: skewX(-20deg);
+  animation: shine 2.5s infinite;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 35px rgba(199, 9, 9, 1),
-    0 0 15px rgba(199, 9, 9, 1) inset;
+  transform: translateY(-4px);
+  box-shadow: 0 0 35px rgba(199, 9, 9, 1),
+              0 0 15px rgba(199, 9, 9, 1) inset;
 }
 
+.button span {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
 
 /* Ya tienes esta animación definida en el código del logo */
 @keyframes pulse {
