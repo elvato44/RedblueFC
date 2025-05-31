@@ -130,14 +130,15 @@ padding: 0;
   font-size: 30px;
   background: linear-gradient(113.27deg, #5428b4 15.04%, #b339e2 84.96%);
   border-radius: 10px;
-  border: none;
   color: white;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 25px rgba(199, 9, 9, 0.8),
-              0 0 10px rgba(199, 9, 9, 0.8) inset;
+  box-shadow:
+    0 0 20px rgba(255, 215, 0, 0.8),   /* resplandor externo dorado */
+    inset 0 0 10px rgba(255, 215, 0, 0.6);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   animation: pulse 1.2s infinite;
+  border: 2px solid #ffd700; 
 }
 
 .button::before {
